@@ -25,19 +25,21 @@ function handleSavingBtn() {
 function getInputValue(ID) {
     const inputField = document.getElementById(ID);
     const inputValue = parseInt(inputField.value);
-    let errorDisplay = document.getElementById(ID).parentElement.nextElementSibling;
+    if (ID !== "saving-percentage") {
+        let errorDisplay = document.getElementById(ID).parentElement.nextElementSibling;
 
-    if (isNaN(inputValue) || inputValue < 0) {
-        if (isNaN(inputValue)) {
-            errorDisplay.innerHTML = "enter a number value.";
-            errorDisplay.style.display = "block";
-        } else if (inputValue < 0) {
-            errorDisplay.innerHTML = "enter a positive number.";
-            errorDisplay.style.display = "block";
+        if (isNaN(inputValue) || inputValue < 0) {
+            if (isNaN(inputValue)) {
+                errorDisplay.innerHTML = "enter a number value.";
+                errorDisplay.style.display = "block";
+            } else if (inputValue < 0) {
+                errorDisplay.innerHTML = "enter a positive number.";
+                errorDisplay.style.display = "block";
+            }
+            return false;
         }
-        return false;
+        errorDisplay.style.display = "none";
     }
-    errorDisplay.style.display = "none";
     return inputValue;
 }
 
