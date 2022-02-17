@@ -58,28 +58,49 @@ function calcTotalBalance() {
         const totalExpense = updateTotalExpense(foodExpenseAmount, rentExpenseAmount, clothExpenseAmount);
 
         const finalBalance = incomeAmount - totalExpense;
-        console.log('loop');
+
+        // checking
+        const erroMessage = document.getElementById("expense-error-message");
+        if (finalBalance < 0) {
+            erroMessage.innerHTML = "insufficient balance";
+            erroMessage.style.display = 'block';
+            updatePreviousValue("total-expense-field", totalExpense);
+        } else {
+            erroMessage.style.display = 'none';
+            updatePreviousValue("total-expense-field", totalExpense);
+        }
         return finalBalance;
     }
-    updatePreviousValue("total-expense-field", 0);
+
     return false;
 }
 
 // to calculate total expenses and update the value
 function updateTotalExpense(foodExpense, rentExepnse, colthExpense) {
     const totalExpense = foodExpense + rentExepnse + colthExpense;
-    updatePreviousValue("total-expense-field", totalExpense);
+    // updatePreviousValue("total-expense-field", totalExpense);
     return totalExpense;
 }
 
 // to calculate and update percentage value
 function calcSavings(percentage) {
-    const balanceAfterExpense = calcTotalBalance();
+    const balanceAfterExpense = calcTotalBalance(); //4500
     const incomeAmount = getInputValue("income-input-field");
     const savingAmount = (incomeAmount * percentage) / 100;
-    const remainingBalance = balanceAfterExpense - savingAmount;
 
+    // checking
+    const erroMessage = document.getElementById("saving-error-message");
+    if (savingAmount > balanceAfterExpense) {
+        erroMessage.innerHTML = "insufficient balance for saving.";
+        erroMessage.style.display = 'block';
+        updatePreviousValue("saving-amount", 0);
+    } else {
+        erroMessage.style.display = 'none';
+        updatePreviousValue("saving-amount", savingAmount);
+    }
+
+    const remainingBalance = balanceAfterExpense - savingAmount;
     // updating values
-    updatePreviousValue("saving-amount", savingAmount);
     updatePreviousValue("remaining-amount", remainingBalance);
+
 }
