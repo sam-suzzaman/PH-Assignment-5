@@ -35,6 +35,7 @@ body {
     text-transform: capitalize;
 }
 
+/* for input field */
 .revenue-input-field {
     outline: none;
     border: none;
@@ -55,6 +56,7 @@ body {
     text-transform: capitalize;
 }
 
+/* for buttons */
 .revenue-btn {
     border-radius: 5px;
     border: 2px solid #dddddd;
