@@ -18,26 +18,42 @@ function handleCalculateBtn() {
 // Event Handler for save button
 function handleSavingBtn() {
     const savingPercentage = getInputValue("saving-percentage");
-    calcSavings(savingPercentage);
+    const error = document.getElementById("percentage-error-message");
+    if (savingPercentage === "showError") {
+        error.innerHTML = "Enter a number value";
+        error.style.display = 'block';
+    } else {
+        error.style.display = "none";
+        calcSavings(savingPercentage);
+    }
+    console.log(savingPercentage);
+
 }
 
 // template function to get input's value ======
 function getInputValue(ID) {
     const inputField = document.getElementById(ID);
     const inputValue = parseInt(inputField.value);
-    if (ID !== "saving-percentage") {
-        let errorDisplay = document.getElementById(ID).parentElement.nextElementSibling;
+    let errorDisplay = document.getElementById(ID).parentElement.nextElementSibling;
 
-        if (isNaN(inputValue) || inputValue < 0) {
+
+    if (isNaN(inputValue) || inputValue < 0) {
+        if (ID == "saving-percentage") {
+            return "showError";
+        } else {
             if (isNaN(inputValue)) {
                 errorDisplay.innerHTML = "enter a number value.";
                 errorDisplay.style.display = "block";
+                console.log('clicked');
             } else if (inputValue < 0) {
                 errorDisplay.innerHTML = "enter a positive number.";
                 errorDisplay.style.display = "block";
             }
+
             return false;
         }
+    }
+    if (ID !== "saving-percentage") {
         errorDisplay.style.display = "none";
     }
     return inputValue;
@@ -62,13 +78,13 @@ function calcTotalBalance() {
         const finalBalance = incomeAmount - totalExpense;
 
         // checking
-        const erroMessage = document.getElementById("expense-error-message");
+        const errorMessage = document.getElementById("expense-error-message");
         if (finalBalance < 0) {
-            erroMessage.innerHTML = "insufficient balance";
-            erroMessage.style.display = 'block';
+            errorMessage.innerHTML = "insufficient balance";
+            errorMessage.style.display = 'block';
             updatePreviousValue("total-expense-field", totalExpense);
         } else {
-            erroMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
             updatePreviousValue("total-expense-field", totalExpense);
         }
         return finalBalance;

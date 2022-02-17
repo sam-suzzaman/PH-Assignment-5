@@ -92,14 +92,19 @@
                             <div
                                 class="d-flex justify-content-center align-items-center flex-column flex-sm-row revenue-mt-20">
                                 <div>
-                                    <label for="saving-percentage" class="revenue-input-label">save:</label>
-                                    <input id="saving-percentage" type="text"
-                                        class="revenue-input-field revenue-save-input" placeholder="Amount">
+                                    <div>
+                                        <label for="saving-percentage" class="revenue-input-label">save:</label>
+                                        <input id="saving-percentage" type="text"
+                                            class="revenue-input-field revenue-save-input" placeholder="Amount">
 
+                                    </div>
                                 </div>
+
                                 <p class="percentage mb-md-0 my-1 my-sm-0">%</p>
                                 <button id="saving-btn" class="btn revenue-btn">save</button>
                             </div>
+                            <!-- error handler -->
+                            <p id="percentage-error-message" class="revenue-error-message mt-3">error</p>
 
                             <!-- Showing Result -->
                             <div>
