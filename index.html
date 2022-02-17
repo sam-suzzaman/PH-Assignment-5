@@ -40,27 +40,38 @@
                                 <input type="text" class="revenue-input-field" id="income-input-field"
                                     placeholder="Amount">
                             </div>
+                            <p id="Income-error-message" class="revenue-error-message">enter correct input</p>
                         </div>
                         <!-- Expenses part -->
                         <div class="">
                             <h4 class=" revenue-title text-capitalize text-center revenue-my-20">expenses</h4>
                             <!-- Food expense -->
-                            <div class=" revenue-mb-20 d-flex justify-content-center align-items-center input-wrapper">
-                                <label for="food-input-field" class="revenue-input-label">food:</label>
-                                <input type="text" class="revenue-input-field" id="food-input-field"
-                                    placeholder="Amount">
+                            <div class="revenue-mb-20">
+                                <div class=" d-flex justify-content-center align-items-center
+                                    input-wrapper">
+                                    <label for="food-input-field" class="revenue-input-label">food:</label>
+                                    <input type="text" class="revenue-input-field" id="food-input-field"
+                                        placeholder="Amount">
+                                </div>
+                                <p id="Income-error-message" class="revenue-error-message">enter correct input</p>
                             </div>
                             <!-- Rent expense -->
-                            <div class=" revenue-mb-20 d-flex justify-content-center align-items-center input-wrapper">
-                                <label for="rent-input-field" class="revenue-input-label">rent:</label>
-                                <input type="text" class="revenue-input-field" id="rent-input-field"
-                                    placeholder="Amount">
+                            <div class="revenue-mb-20">
+                                <div class="d-flex justify-content-center align-items-center input-wrapper">
+                                    <label for="rent-input-field" class="revenue-input-label">rent:</label>
+                                    <input type="text" class="revenue-input-field" id="rent-input-field"
+                                        placeholder="Amount">
+                                </div>
+                                <p id="Income-error-message" class="revenue-error-message">enter correct input</p>
                             </div>
                             <!-- Clothes expense -->
-                            <div class=" revenue-mb-20 d-flex justify-content-center align-items-center input-wrapper">
-                                <label for="cloth-input-field" class="revenue-input-label">clothes:</label>
-                                <input type="text" class="revenue-input-field" id="cloth-input-field"
-                                    placeholder="Amount">
+                            <div class="revenue-mb-20">
+                                <div class=" d-flex justify-content-center align-items-center input-wrapper">
+                                    <label for="cloth-input-field" class="revenue-input-label">clothes:</label>
+                                    <input type="text" class="revenue-input-field" id="cloth-input-field"
+                                        placeholder="Amount">
+                                </div>
+                                <p id="Income-error-message" class="revenue-error-message">enter correct input</p>
                             </div>
                         </div>
                         <!-- calculate button -->
@@ -70,9 +81,9 @@
                         <!-- Showing Result -->
                         <div>
                             <h4 class="revenue-title text-center revenue-mt-20">Total Expenses: <span
-                                    id="total-expense-field">5500</span> </h4>
+                                    id="total-expense-field">0</span> </h4>
                             <h4 class="revenue-title text-center revenue-mt-20">Balance: <span
-                                    id="total-balance-field">4500</span></h4>
+                                    id="total-balance-field">0</span></h4>
                         </div>
 
                         <!-- Savings part -->
@@ -92,10 +103,10 @@
                             <!-- Showing Result -->
                             <div>
                                 <h4 class="revenue-title text-center revenue-mt-20">saving amount: <span
-                                        id="saving-amount">5500</span>
+                                        id="saving-amount">0</span>
                                 </h4>
                                 <h4 class="revenue-title text-center revenue-mt-20">remaining amount: <span
-                                        id="remaining-amount">4500</span>
+                                        id="remaining-amount">0</span>
                                 </h4>
                             </div>
                         </div>

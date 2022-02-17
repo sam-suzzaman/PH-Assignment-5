@@ -80,3 +80,14 @@ body {
     margin-left: 15px;
     margin-right: 15px;
 }
+
+/* adding styles for error messagea */
+.revenue-error-message {
+    display: none;
+    color: #df3f3f;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: capitalize;
+    margin-top: 5px;
+    text-align: center;
+}
